@@ -22,5 +22,14 @@ def update_quantity(inventory_list, target_name, qty):
             return True
     return False
             
+def delete_item(inventory_list, target_name):
+    """ Delete an entire dictionary by selecting the item name """
+    for item_dict in inventory_list:
+        name = item_dict.get('item')
         
+        if name.lower() == target_name.lower():
+            inventory_list.remove(item_dict)
+            return True
+        
+    return False
             

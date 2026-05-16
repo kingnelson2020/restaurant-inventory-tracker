@@ -24,3 +24,4 @@ def get_update_input():
     new_qty = get_valid_int(f'Enter new quantity for {target_name}: ')
     
     return target_name, new_qty
+

@@ -1,5 +1,5 @@
 from src.user_input import get_new_inventory, get_update_input
-from src.inventory import add_inventory, update_quantity
+from src.inventory import add_inventory, update_quantity, delete_item
 from src.views import display_inventory
 
 def main():
@@ -14,7 +14,8 @@ def main():
         print('\n1. Add new inventory')
         print('2. View inventory')
         print('3. Update quantity')
-        print('4. Exit')
+        print('4. Delete item')
+        print('5. Exit')
         try:
             
             user_choice = int(input('\nEnter your choice: '))
@@ -35,9 +36,16 @@ def main():
                 else:
                     print(f'Error: {target_name.capitalize()} was not found in inventory.')
             elif user_choice == 4:
+                target_name = input('Enter the name of item to be deleted: ')
+                success = delete_item(inventory, target_name)
+                if success:
+                    print('Item deleted successfully!')
+                else:
+                    print('Item not found') 
+            elif user_choice == 5:
                 break
             else:
-                print('Please choose between 1 - 4')
+                print('Please choose between 1 - 5')
                 
         except ValueError:
             print(f'{ValueError}')
