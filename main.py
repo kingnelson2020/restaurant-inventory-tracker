@@ -1,3 +1,6 @@
+from src.user_input import get_new_inventory
+from src.inventory import add_inventory
+
 def main():
     
     print('===================================================')
@@ -15,9 +18,10 @@ def main():
             user_choice = int(input('\nEnter your choice: '))
             
             if user_choice == 1:
-                print('Add new inventory')
+                new_inventory = get_new_inventory()
+                add_inventory(inventory, new_inventory)
             elif user_choice == 2:
-                print('View inventory')
+                print(inventory)
             elif user_choice == 3:
                 break
             else:
