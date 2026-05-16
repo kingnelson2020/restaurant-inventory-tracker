@@ -22,18 +22,18 @@ Each inventory item contains:
 
 Example:
 
-
+```text
 Rice
 Quantity: 50
 Unit: kg
 Reorder Level: 10
-
+```
 
 ---
 
 # Project Structure
 
-
+```text
 restaurant-inventory-tracker/
 │
 ├── src/
@@ -46,7 +46,7 @@ restaurant-inventory-tracker/
 ├── main.py
 ├── README.md
 ├── .gitignore
-
+```
 
 ---
 
