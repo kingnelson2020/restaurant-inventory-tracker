@@ -1,5 +1,6 @@
 from src.user_input import get_new_inventory
 from src.inventory import add_inventory
+from src.views import display_inventory
 
 def main():
     
@@ -21,14 +22,14 @@ def main():
                 new_inventory = get_new_inventory()
                 add_inventory(inventory, new_inventory)
             elif user_choice == 2:
-                print(inventory)
+                display_inventory(inventory)
             elif user_choice == 3:
                 break
             else:
                 print('Please choose between 1 - 3')
                 
         except ValueError:
-            print('Wrong selection! You must select numbers between 1 - 3')
+            print(f'{ValueError}')
 
 
 
