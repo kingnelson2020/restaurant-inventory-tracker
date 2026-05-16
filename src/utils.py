@@ -24,15 +24,10 @@ def get_valid_int(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if value <= 0:
-                print('Error: Number cannot be negative or 0.')
+            if value < 0:
+                print('Error: Number cannot be negative.')
                 continue
             return value
         except ValueError:
             print('Error: Please enter a valid number')
 
-""" test_inputs = ["Tomato", "   ", "", "12345", "Tomato 2"]
-
-for user_input in test_inputs:
-    is_valid, message = validate_item_name(user_input)
-    print(f"Input: '{user_input}' -> Valid: {is_valid} | {message}") """

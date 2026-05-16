@@ -8,7 +8,7 @@ def display_inventory(inventory_list):
     print('=============== CURRENT INVENTORY ====================')
     for index, item_dict in enumerate(inventory_list, start=1):
         #separate all dictionaries in the list
-        print(f'{index}. {item_dict['item']}')
+        print(f'{index}. {item_dict['item'].capitalize()}')
         
         print(f'   Quantity        : {item_dict['quantity']}')
         print(f'   Unit            : {item_dict['unit']}')
