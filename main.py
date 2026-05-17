@@ -1,4 +1,4 @@
-from src.storage import save_to_csv
+from src.storage import load_from_csv, save_to_csv
 from src.user_input import get_new_inventory, get_update_input
 from src.inventory import add_inventory, update_quantity, delete_item
 from src.views import display_inventory
@@ -9,7 +9,7 @@ def main():
     print('--------Restaurant Inventory Tracker v1.0 ---------')
     print('===================================================')
     
-    inventory = []
+    inventory = load_from_csv()
     
     while True:
         print('\n1. Add new inventory')
@@ -44,16 +44,15 @@ def main():
                 else:
                     print('Item not found') 
             elif user_choice == 5:
+                print('Saving inventory data... Please do not close the terminal.')
+                save_to_csv(inventory)
+                print('Inventory data saved successfull. Goodbye!')
                 break
             else:
                 print('Please choose between 1 - 5')
                 
         except ValueError:
-            print(f'{ValueError}')
-            
-    print('Saving inventory data... Please do not close the terminal.')
-    save_to_csv(inventory)
-    print('Inventory data saved successfull. Goodbye!')
+            print(f'Invalid choice. Enter choice from 1 - 5')
 
 
 if __name__ == "__main__":
