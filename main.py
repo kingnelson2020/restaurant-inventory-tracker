@@ -1,3 +1,4 @@
+from src.storage import save_to_csv
 from src.user_input import get_new_inventory, get_update_input
 from src.inventory import add_inventory, update_quantity, delete_item
 from src.views import display_inventory
@@ -49,9 +50,10 @@ def main():
                 
         except ValueError:
             print(f'{ValueError}')
-
-
-
+            
+    print('Saving inventory data... Please do not close the terminal.')
+    save_to_csv(inventory)
+    print('Inventory data saved successfull. Goodbye!')
 
 
 if __name__ == "__main__":
